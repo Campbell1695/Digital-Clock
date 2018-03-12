@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+ <html>
+  <head>
+   <title>
+    Clock
+   </title>
+   <link href="https://fonts.googleapis.com/css?family=Bungee+Inline" rel="stylesheet">
+  </head>
+  <style>
+#sunrise
+{
+    visibility: hidden;
+    top: 0px;
+    left: 337.5px;
+    position: absolute;
+}
+#morning
+{
+    visibility: hidden;
+    top: 0px;
+    left: 337.5px;
+    position: absolute;
+}
+#noonish
+{
+    visibility: hidden;
+    top: 0px;
+    left: 337.5px;
+    position: absolute;
+}
+#afternoon
+{
+    visibility: hidden;
+    top: 0px;
+    left: 337.5px;
+    position: absolute;
+}
+#dusk
+{
+    visibility: hidden;
+    top: 0px;
+    left: 337.5px;
+    position: absolute;
+}
+#evening
+{
+    visibility: hidden;
+    top: 0px;
+    left: 337.5px;
+    position: absolute;
+}
+#midnight
+{
+    visibility: hidden;
+    top: 0px;
+    left: 337.5px;
+    position: absolute;
+}
+#zzz
+{
+    visibility: hidden;
+    top: 0px;
+    left: 337.5px;
+    position: absolute;
+}
+#y
+{
+  font-family: 'Bungee Inline', cursive;
+  top: -33px;
+  left: 9px;
+  font-size: 40px;
+  color: black;
+  position: absolute;
+}
+#z
+{
+  top: 80px;
+  left: 37px;
+  position: absolute;
+}
+#body
+{
+  width: 200px;
+	height: 135px;
+  top: 250px;
+  left: 375px;
+  border: 5px solid black;
+	background-color: saddlebrown;
+	position: absolute;
+}
+#face
+{
+  width: 140px;
+	height: 115px;
+  top: 9px;
+  left: 54px;
+  border: 1px solid black;
+	background-color: ivory;
+	position: absolute;
+}
+#hat
+{
+  width: 25px;
+	height: 5px;
+  top: 240px;
+  left: 410px;
+  border: 5px solid black;
+	background-color:  ivory;
+	position: absolute;
+}
+#lFoot
+{
+  width: 35px;
+	height: 5px;
+  top: 390px;
+  left: 400px;
+  border: 5px solid black;
+	background-color:  ivory;
+	position: absolute;
+}
+#rFoot
+{
+  width: 35px;
+	height: 5px;
+  top: 390px;
+  left: 515px;
+  border: 5px solid black;
+	background-color:  ivory;
+	position: absolute;
+}
+#detailFace
+{
+  width: 45px;
+	height: 115px;
+  top: 9px;
+  left: 5px;
+  border: 1px solid black;
+	background-color: burlywood;
+	position: absolute;
+}
+#detailOne
+{
+  width: 35px;
+	height: 2px;
+  top: 17px;
+  left: 5px;
+	background-color: saddlebrown;
+	position: absolute;
+}
+#detailTwo
+{
+  width: 35px;
+	height: 2px;
+  top: 37px;
+  left: 5px;
+	background-color: saddlebrown;
+	position: absolute;
+}
+#detailThree
+{
+  width: 35px;
+	height: 2px;
+  top: 57px;
+  left: 5px;
+	background-color: saddlebrown;
+	position: absolute;
+}
+#detailFour
+{
+  width: 35px;
+	height: 2px;
+  top: 77px;
+  left: 5px;
+	background-color: saddlebrown;
+	position: absolute;
+}
+#detailFive
+{
+  width: 35px;
+	height: 2px;
+  top: 97px;
+  left: 5px;
+	background-color: saddlebrown;
+	position: absolute;
+}
+.nTlEtG
+{
+	top: -4px;
+
+	left: 1px;
+
+  position: absolute;
+
+	font-size: 4px;
+}
+
+</style>
+  <body onload = "startTime()">
+
+
+     <p id = "sunrise"><img src ="sunrise.jpg"style ="width:650px; height:550px;"></p>
+     <p id = "morning"><img src ="morning.jpg"style ="width:650px; height:550px;"></p>
+     <p id = "noonish"><img src ="noonish.jpg"style ="width:650px; height:550px;"></p>
+     <p id = "afternoon"><img src ="afternoon.jpg"style ="width:650px; height:550px;"></p>
+     <p id = "dusk"><img src ="dusk.jpg"style ="width:650px; height:550px;"></p>
+     <p id = "evening"><img src ="evening.jpg"style ="width:650px; height:550px;"></p>
+     <p id = "midnight"><img src ="midnight.jpg"style ="width:650px; height:550px;"></p>
+     <p id = "zzz"><img src ="zzz.jpg"style ="width:650px; height:550px;"></p>
+
+     <div id ="body">
+       <div id ="face">
+         <p id = "y"></p>
+          <p id = "z"></p>
+       </div>
+       <div id ="detailFace">
+         <div id ="detailOne">
+         </div>
+         <div id ="detailTwo">
+         </div>
+         <div id ="detailThree">
+         </div>
+         <div id ="detailFour">
+         </div>
+         <div id ="detailFive">
+         </div>
+       </div>
+     </div>
+     <div id ="hat">
+       <p class ="nTlEtG" style="font-family:comic sans ms";>
+        R67F Da45Y
+       </p>
+     </div>
+     <div id ="lFoot">
+     </div>
+     <div id ="rFoot">
+     </div>
+
+
+
+     <p id = "z"></p>
+
+  <script>
+  function startTime()
+  {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('y').innerHTML =
+  h + ":" + m;
+
+  var t = setTimeout(startTime, 500);
+
+ if (h*10000 + m*100 + s*1 > 62959 && h*10000 + m*100 + s*1 < 73001) {
+
+        greeting = "Sunrise";
+        document.getElementById("sunrise").style.visibility = "visible";
+        document.getElementById("zzz").style.visibility = "hidden";
+
+    }else if (h*10000 + m*100 + s*1 > 73000 && h*10000 + m*100 + s*1 < 113000) {
+
+        greeting = "morning";
+        document.getElementById("morning").style.visibility = "visible";
+        document.getElementById("sunrise").style.visibility = "hidden";
+
+    }else if (h*10000 + m*100 + s*1 > 112959 && h*10000 + m*100 + s*1 < 123001) {
+
+        greeting = "noonish";
+        document.getElementById("noonish").style.visibility = "visible";
+        document.getElementById("morning").style.visibility = "hidden";
+
+    } else if (h*10000 + m*100 + s*1 > 123000 && h*10000 + m*100 + s*1 < 190000) {
+
+        greeting = "Afternoon";
+        document.getElementById("afternoon").style.visibility = "visible";
+        document.getElementById("noonish").style.visibility = "hidden";
+
+    } else if (h*10000 + m*100 + s*1 > 185959 && h*10000 + m*100 + s*1 < 193001) {
+
+        greeting = "Dusk";
+        document.getElementById("dusk").style.visibility = "visible";
+        document.getElementById("afternoon").style.visibility = "hidden";
+
+    } else if (h*10000 + m*100 + s*1 > 193000 && h*10000 + m*100 + s*1 < 240000) {
+
+        greeting = "Evening";
+        document.getElementById("evening").style.visibility = "visible";
+        document.getElementById("dusk").style.visibility = "hidden";
+
+    } else if (h*10000 + m*100 + s*1 == 240000) {
+
+        greeting = "MidNight";
+        document.getElementById("midnight").style.visibility = "visible";
+        document.getElementById("evening").style.visibility = "hidden";
+
+    }  else {
+        greeting = "ZZZ";
+        document.getElementById("zzz").style.visibility = "visible";
+        document.getElementById("midnight").style.visibility = "hidden";
+    }
+    document.getElementById("z").innerHTML = greeting
+    }
+    function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+
+</body>
+</html>
